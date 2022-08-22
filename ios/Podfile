@@ -10,7 +10,13 @@ install! 'cocoapods',
   :deterministic_uuids => false
 
 target 'volunteersmobileappv2' do
+
+  # # React Native Maps dependencies
+  # rn_maps_path = '../node_modules/react-native-maps'
+  # pod 'react-native-google-maps', :path => rn_maps_path
+
   use_expo_modules!
+
   config = use_native_modules!
 
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']

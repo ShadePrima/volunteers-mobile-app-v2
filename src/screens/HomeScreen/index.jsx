@@ -1,18 +1,20 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Dimensions } from "react-native";
 
 import HomeMap from "../../components/HomeMap";
 import HomeSearch from "../../components/HomeSearch";
 import MiddleMessage from "../../components/MiddleMessage";
 
+
+
 const HomeScreen = () => {
   return (
     <View>
-      <HomeMap />
+      <View style={{ height: Dimensions.get("window").height - 350 }}>
+        <HomeMap />
+      </View>
       <MiddleMessage />
       <HomeSearch />
-      {/* Covid message */}
-      {/* Bottom component */}
     </View>
   );
 };
