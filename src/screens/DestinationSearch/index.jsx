@@ -3,6 +3,7 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import { View, Text, TextInput, SafeAreaView } from "react-native";
 
 import styles from "./styles";
+import PlaceRow from "./PlaceRow";
 
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = React.useState(null);
@@ -23,12 +24,20 @@ const DestinationSearch = () => {
           setOriginPlace({ data, details });
           console.log(data, details);
         }}
-        styles={{ textInput: styles.textInput }}
+        enablePoweredByContainer={false}
+        suppressDefaultStyles
+        styles={{
+          textInput: styles.textInput,
+          container: styles.autocompleteContainer,
+          listView: styles.listView,
+          separator: styles.separator,
+        }}
         fetchDetails
         query={{
           key: "AIzaSyAFZdRRBDQVvcbi8FT4_HQfCqVPy6T6NVo",
           language: "en",
         }}
+        renderRow={(data) => <PlaceRow data={data} />}
       />
       <GooglePlacesAutocomplete
         placeholder="Where to ?"
@@ -36,13 +45,22 @@ const DestinationSearch = () => {
           setDestinationPlace({ data, details });
           console.log(data, details);
         }}
-        styles={{ textInput: styles.textInput }}
+        enablePoweredByContainer={false}
+        suppressDefaultStyles
+        styles={{
+          textInput: styles.textInput,
+          container: { ...styles.autocompleteContainer, top: 70 },
+          separator: styles.separator,
+        }}
         fetchDetails
         query={{
           key: "AIzaSyAFZdRRBDQVvcbi8FT4_HQfCqVPy6T6NVo",
           language: "en",
         }}
+        renderRow={(data) => <PlaceRow data={data} />}
       />
+
+      <View></View>
     </View>
   );
 };
