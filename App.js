@@ -11,8 +11,8 @@ export default function App() {
   return (
     <View>
       <StatusBar style="auto" />
-      {/* <HomeScreen /> */}
-      <DestinationSearch /> 
+      <HomeScreen />
+      {/* <DestinationSearch />  */}
       {/* <SearchResults /> */}
     </View>
   );
