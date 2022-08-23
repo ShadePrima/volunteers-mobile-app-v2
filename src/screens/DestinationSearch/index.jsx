@@ -60,7 +60,9 @@ const DestinationSearch = () => {
         renderRow={(data) => <PlaceRow data={data} />}
       />
 
-      <View></View>
+      <View style={styles.circle}></View>
+      <View style={styles.line}></View>
+      <View style={styles.square}></View>
     </View>
   );
 };

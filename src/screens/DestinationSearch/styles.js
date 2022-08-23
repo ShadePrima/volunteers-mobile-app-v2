@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: "#eee",
     marginVertical: 5,
+    marginLeft: 20,
   },
   row: {
     flexDirection: "row",
@@ -36,6 +37,31 @@ const styles = StyleSheet.create({
   separator: {
     backgroundColor: "#bdc1c1",
     height: 1,
+  },
+  circle: {
+    position: "absolute",
+    width: 7,
+    height: 7,
+    backgroundColor: "#060606",
+    borderRadius: 5,
+    top: 35,
+    left: 15,
+  },
+  line: {
+    position: "absolute",
+    width: 2,
+    height: 64,
+    backgroundColor: "#919191",
+    top: 42,
+    left: 17.5,
+  },
+  square: {
+    position: "absolute",
+    width: 7,
+    height: 7,
+    backgroundColor: "#060606",
+    top: 100,
+    left: 15,
   },
 });
 
