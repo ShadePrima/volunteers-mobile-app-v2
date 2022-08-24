@@ -1,22 +1,13 @@
 import React from "react";
 import * as Location from "expo-location";
 
-import { StyleSheet, PermissionsAndroid, Text, View } from "react-native";
+// import { StatusBar } from "expo-status-bar";
 
-import { StatusBar } from "expo-status-bar";
-
-import HomeScreen from "./src/screens/HomeScreen";
-
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeSearch from "./src/components/HomeSearch";
 import Navigation from "./src/navigation/root";
-const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [location, setLocation] = React.useState(null);
   const [errorMsg, setErrorMsg] = React.useState(null);
-  console.log(location);
 
   React.useEffect(() => {
     (async () => {

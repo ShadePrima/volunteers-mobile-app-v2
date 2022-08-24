@@ -25,10 +25,11 @@ const DestinationSearch = () => {
   const navigation = useNavigation();
 
   const checkNavigation = () => {
-    console.warn("useEffect is called");
     if (originPlace && destinationPlace) {
-      console.warn("Hello?");
-      navigation.navigate("SearchResults");
+      navigation.navigate("SearchResults", {
+        originPlace,
+        destinationPlace,
+      });
     }
   };
 
