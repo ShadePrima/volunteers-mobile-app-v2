@@ -4,19 +4,36 @@ import { View, Text, TextInput, SafeAreaView } from "react-native";
 
 import styles from "./styles";
 import PlaceRow from "./PlaceRow";
+import { useNavigation } from "@react-navigation/native";
 
 // navigator.geolocation = require("expo-location");
 // navigator.geolocation = require("@react-native-community/geolocation");
 
+const homePlace = {
+  description: "Home",
+  geometry: { location: { lat: 47.752561, lng: 35.139369 } },
+};
+const workPlace = {
+  description: "Work",
+  geometry: { location: { lat: 47.83964, lng: 35.130867 } },
+};
+
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = React.useState(null);
   const [destinationPlace, setDestinationPlace] = React.useState(null);
-  console.log(originPlace);
-  React.useEffect(() => {
+
+  const navigation = useNavigation();
+
+  const checkNavigation = () => {
     console.warn("useEffect is called");
     if (originPlace && destinationPlace) {
-      consoloe.warn("Redirect to results");
+      console.warn("Hello?");
+      navigation.navigate("SearchResults");
     }
+  };
+
+  React.useEffect(() => {
+    checkNavigation();
   }, [originPlace, destinationPlace]);
 
   return (
@@ -43,6 +60,8 @@ const DestinationSearch = () => {
         // currentLocation={true}
         // currentLocationLabel="Current location"
         renderRow={(data) => <PlaceRow data={data} />}
+        predefinedPlaces={[homePlace, workPlace]}
+        renderDescription={(data) => data.description || data.vicinity}
       />
       <GooglePlacesAutocomplete
         placeholder="Where to ?"
@@ -63,6 +82,8 @@ const DestinationSearch = () => {
           language: "en",
         }}
         renderRow={(data) => <PlaceRow data={data} />}
+        predefinedPlaces={[homePlace, workPlace]}
+        renderDescription={(data) => data.description || data.vicinity}
       />
 
       <View style={styles.circle}></View>
