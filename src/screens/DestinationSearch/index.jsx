@@ -5,10 +5,13 @@ import { View, Text, TextInput, SafeAreaView } from "react-native";
 import styles from "./styles";
 import PlaceRow from "./PlaceRow";
 
+// navigator.geolocation = require("expo-location");
+// navigator.geolocation = require("@react-native-community/geolocation");
+
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = React.useState(null);
   const [destinationPlace, setDestinationPlace] = React.useState(null);
-
+  console.log(originPlace);
   React.useEffect(() => {
     console.warn("useEffect is called");
     if (originPlace && destinationPlace) {
@@ -37,6 +40,8 @@ const DestinationSearch = () => {
           key: "AIzaSyAFZdRRBDQVvcbi8FT4_HQfCqVPy6T6NVo",
           language: "en",
         }}
+        // currentLocation={true}
+        // currentLocationLabel="Current location"
         renderRow={(data) => <PlaceRow data={data} />}
       />
       <GooglePlacesAutocomplete
