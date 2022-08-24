@@ -21,7 +21,7 @@ const HomeMap = () => {
       <MapView
         style={{
           height: "100%",
-          wedth: "100%",
+          width: "100%",
         }}
         provider={PROVIDER_GOOGLE}
         initialRegion={{
