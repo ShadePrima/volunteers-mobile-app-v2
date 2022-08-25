@@ -10,7 +10,7 @@ const SearchResults = () => {
   console.log(rout.params);
   return (
     <View style={{ display: "flex" }}>
-      <View style={{ height: Dimensions.get("window").height - 350 }}>
+      <View style={{ height: Dimensions.get("window").height - 420 }}>
         <RouteMap />
       </View>
       <View style={{ height: 500 }}>
