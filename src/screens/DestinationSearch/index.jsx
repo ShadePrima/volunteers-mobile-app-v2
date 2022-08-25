@@ -9,13 +9,18 @@ import { useNavigation } from "@react-navigation/native";
 // navigator.geolocation = require("expo-location");
 // navigator.geolocation = require("@react-native-community/geolocation");
 
-const homePlace = {
-  description: "Home",
+const RozumovkaPlace = {
+  description: "Vladimir Home",
   geometry: { location: { lat: 47.752561, lng: 35.139369 } },
 };
 const workPlace = {
   description: "Work",
   geometry: { location: { lat: 47.83964, lng: 35.130867 } },
+};
+
+const AlksandrPlace = {
+  description: "Baburka",
+  geometry: { location: { lat: 47.818262, lng: 35.055319 } },
 };
 
 const DestinationSearch = () => {
@@ -43,7 +48,6 @@ const DestinationSearch = () => {
         placeholder="Where from ?"
         onPress={(data, details = null) => {
           setOriginPlace({ data, details });
-          console.log(data, details);
         }}
         enablePoweredByContainer={false}
         suppressDefaultStyles
@@ -61,14 +65,13 @@ const DestinationSearch = () => {
         // currentLocation={true}
         // currentLocationLabel="Current location"
         renderRow={(data) => <PlaceRow data={data} />}
-        predefinedPlaces={[homePlace, workPlace]}
+        predefinedPlaces={[RozumovkaPlace, workPlace, AlksandrPlace]}
         renderDescription={(data) => data.description || data.vicinity}
       />
       <GooglePlacesAutocomplete
         placeholder="Where to ?"
         onPress={(data, details = null) => {
           setDestinationPlace({ data, details });
-          console.log(data, details);
         }}
         enablePoweredByContainer={false}
         suppressDefaultStyles
@@ -83,7 +86,7 @@ const DestinationSearch = () => {
           language: "en",
         }}
         renderRow={(data) => <PlaceRow data={data} />}
-        predefinedPlaces={[homePlace, workPlace]}
+        predefinedPlaces={[RozumovkaPlace, workPlace, AlksandrPlace]}
         renderDescription={(data) => data.description || data.vicinity}
       />
 
