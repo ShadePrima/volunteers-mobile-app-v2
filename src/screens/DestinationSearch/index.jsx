@@ -4,16 +4,43 @@ import { View, Text, TextInput, SafeAreaView } from "react-native";
 
 import styles from "./styles";
 import PlaceRow from "./PlaceRow";
+import { useNavigation } from "@react-navigation/native";
+
+// navigator.geolocation.default = require("expo-location");
+// navigator.geolocation = require("@react-native-community/geolocation");
+// navigator.geolocation = require("@react-native-community/geolocation");
+
+const RozumovkaPlace = {
+  description: "Vladimir Home",
+  geometry: { location: { lat: 47.752561, lng: 35.139369 } },
+};
+const workPlace = {
+  description: "Work",
+  geometry: { location: { lat: 47.83964, lng: 35.130867 } },
+};
+
+const AlksandrPlace = {
+  description: "Baburka",
+  geometry: { location: { lat: 47.818262, lng: 35.055319 } },
+};
 
 const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = React.useState(null);
   const [destinationPlace, setDestinationPlace] = React.useState(null);
 
-  React.useEffect(() => {
-    console.warn("useEffect is called");
+  const navigation = useNavigation();
+
+  const checkNavigation = () => {
     if (originPlace && destinationPlace) {
-      consoloe.warn("Redirect to results");
+      navigation.navigate("SearchResults", {
+        originPlace,
+        destinationPlace,
+      });
     }
+  };
+
+  React.useEffect(() => {
+    checkNavigation();
   }, [originPlace, destinationPlace]);
 
   return (
@@ -22,7 +49,6 @@ const DestinationSearch = () => {
         placeholder="Where from ?"
         onPress={(data, details = null) => {
           setOriginPlace({ data, details });
-          console.log(data, details);
         }}
         enablePoweredByContainer={false}
         suppressDefaultStyles
@@ -37,13 +63,16 @@ const DestinationSearch = () => {
           key: "AIzaSyAFZdRRBDQVvcbi8FT4_HQfCqVPy6T6NVo",
           language: "en",
         }}
+        currentLocation={true}
+        currentLocationLabel="Current location"
         renderRow={(data) => <PlaceRow data={data} />}
+        predefinedPlaces={[RozumovkaPlace, workPlace, AlksandrPlace]}
+        renderDescription={(data) => data.description || data.vicinity}
       />
       <GooglePlacesAutocomplete
         placeholder="Where to ?"
         onPress={(data, details = null) => {
           setDestinationPlace({ data, details });
-          console.log(data, details);
         }}
         enablePoweredByContainer={false}
         suppressDefaultStyles
@@ -58,6 +87,8 @@ const DestinationSearch = () => {
           language: "en",
         }}
         renderRow={(data) => <PlaceRow data={data} />}
+        predefinedPlaces={[RozumovkaPlace, workPlace, AlksandrPlace]}
+        renderDescription={(data) => data.description || data.vicinity}
       />
 
       <View style={styles.circle}></View>

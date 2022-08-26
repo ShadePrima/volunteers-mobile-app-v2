@@ -1,4 +1,4 @@
-package com.volunteersmobileappv2.newarchitecture.modules;
+package com.shadeprima.volunteersmobileappv2.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

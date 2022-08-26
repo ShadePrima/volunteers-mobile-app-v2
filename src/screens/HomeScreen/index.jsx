@@ -5,12 +5,10 @@ import HomeMap from "../../components/HomeMap";
 import HomeSearch from "../../components/HomeSearch";
 import MiddleMessage from "../../components/MiddleMessage";
 
-
-
 const HomeScreen = () => {
   return (
     <View>
-      <View style={{ height: Dimensions.get("window").height - 350 }}>
+      <View style={{ height: Dimensions.get("window").height - 420 }}>
         <HomeMap />
       </View>
       <MiddleMessage />
