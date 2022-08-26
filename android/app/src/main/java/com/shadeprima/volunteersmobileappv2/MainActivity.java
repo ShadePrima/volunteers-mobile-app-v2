@@ -1,4 +1,4 @@
-package com.volunteersmobileappv2;
+package com.shadeprima.volunteersmobileappv2;
 
 import android.os.Build;
 import android.os.Bundle;

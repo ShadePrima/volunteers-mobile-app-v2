@@ -6,7 +6,8 @@ import styles from "./styles";
 import PlaceRow from "./PlaceRow";
 import { useNavigation } from "@react-navigation/native";
 
-// navigator.geolocation = require("expo-location");
+// navigator.geolocation.default = require("expo-location");
+// navigator.geolocation = require("@react-native-community/geolocation");
 // navigator.geolocation = require("@react-native-community/geolocation");
 
 const RozumovkaPlace = {
@@ -62,8 +63,8 @@ const DestinationSearch = () => {
           key: "AIzaSyAFZdRRBDQVvcbi8FT4_HQfCqVPy6T6NVo",
           language: "en",
         }}
-        // currentLocation={true}
-        // currentLocationLabel="Current location"
+        currentLocation={true}
+        currentLocationLabel="Current location"
         renderRow={(data) => <PlaceRow data={data} />}
         predefinedPlaces={[RozumovkaPlace, workPlace, AlksandrPlace]}
         renderDescription={(data) => data.description || data.vicinity}

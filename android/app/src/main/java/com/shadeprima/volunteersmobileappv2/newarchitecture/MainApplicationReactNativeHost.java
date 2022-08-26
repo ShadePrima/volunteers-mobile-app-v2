@@ -1,4 +1,4 @@
-package com.volunteersmobileappv2.newarchitecture;
+package com.shadeprima.volunteersmobileappv2.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.volunteersmobileappv2.BuildConfig;
-import com.volunteersmobileappv2.newarchitecture.components.MainComponentsRegistry;
-import com.volunteersmobileappv2.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.shadeprima.volunteersmobileappv2.BuildConfig;
+import com.shadeprima.volunteersmobileappv2.newarchitecture.components.MainComponentsRegistry;
+import com.shadeprima.volunteersmobileappv2.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

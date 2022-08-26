@@ -5,6 +5,17 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "882b4899-d607-41cb-aa75-a0ba4ef433b4"
+      }
+    },
+    "android": {
+      "package": "com.shadeprima.volunteersmobileappv2"
+    },
+    "ios": {
+      "bundleIdentifier": "com.shadeprima.volunteersmobileappv2"
+    }
   }
 }
