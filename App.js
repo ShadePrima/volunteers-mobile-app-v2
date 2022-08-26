@@ -6,17 +6,6 @@ import * as Location from "expo-location";
 import Navigation from "./src/navigation/root";
 
 export default function App() {
-<<<<<<< HEAD
-  return (
-    <View>
-      <StatusBar style="auto" />
-      <HomeScreen />
-      {/* <DestinationSearch />  */}
-      {/* <SearchResults /> */}
-      //Home
-    </View>
-  );
-=======
   const [location, setLocation] = React.useState(null);
   const [errorMsg, setErrorMsg] = React.useState(null);
 
@@ -41,5 +30,4 @@ export default function App() {
   }
 
   return <Navigation />;
->>>>>>> newFeature
 }
